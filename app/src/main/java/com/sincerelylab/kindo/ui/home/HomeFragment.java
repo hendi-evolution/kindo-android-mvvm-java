@@ -45,11 +45,9 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        adapter = new FeedsAdapter();
         rvFeeds = view.findViewById(R.id.rv_feeds);
         rvFeeds.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
-
-
-        adapter = new FeedsAdapter();
         rvFeeds.setAdapter(adapter);
         homeFragmentViewModel.getFeedPagedList().observe(this, feeds -> adapter.submitList(feeds));
     }

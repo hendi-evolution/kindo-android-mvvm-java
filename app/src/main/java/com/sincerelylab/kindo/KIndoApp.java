@@ -1,4 +1,6 @@
 package com.sincerelylab.kindo;
 
-public class KIndoApp {
+import android.app.Application;
+
+public class KIndoApp extends Application {
 }
